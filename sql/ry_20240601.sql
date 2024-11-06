@@ -76,16 +76,16 @@ insert into sys_user values(2,  105, 'ry',    'Ruoyi', '00', 'ry@qq.com',  '1566
 drop table if exists sys_post;
 create table sys_post
 (
-  post_id       bigint(20)      not null auto_increment    comment '岗位ID',
-  post_code     varchar(64)     not null                   comment '岗位编码',
-  post_name     varchar(50)     not null                   comment '岗位名称',
-  post_sort     int(4)          not null                   comment '显示顺序',
-  status        char(1)         not null                   comment '状态（0正常 1停用）',
-  create_by     varchar(64)     default ''                 comment '创建者',
-  create_time   datetime                                   comment '创建时间',
-  update_by     varchar(64)     default ''			       comment '更新者',
-  update_time   datetime                                   comment '更新时间',
-  remark        varchar(500)    default null               comment '备注',
+  post_id       bigint(20)      not null auto_increment    comment 'Position ID',
+  post_code     varchar(64)     not null                   comment 'Position Code',
+  post_name     varchar(50)     not null                   comment 'Position Name',
+  post_sort     int(4)          not null                   comment 'Display Order',
+  status        char(1)         not null                   comment 'Status (0 Active, 1 Inactive)',
+  create_by     varchar(64)     default ''                 comment 'Created By',
+  create_time   datetime                                   comment 'Creation Time',
+  update_by     varchar(64)     default ''                 comment 'Updated By',
+  update_time   datetime                                   comment 'Update Time',
+  remark        varchar(500)    default null               comment 'Remark',
   primary key (post_id)
 ) engine=innodb comment = 'Position Information Table';
 
@@ -103,18 +103,18 @@ insert into sys_post values(4, 'user', 'Ordinary Employee',  4, '0', 'admin', sy
 -- ----------------------------
 drop table if exists sys_role;
 create table sys_role (
-  role_id           bigint(20)      not null auto_increment    comment '角色ID',
-  role_name         varchar(30)     not null                   comment '角色名称',
-  role_key          varchar(100)    not null                   comment '角色权限字符串',
-  role_sort         int(4)          not null                   comment '显示顺序',
-  data_scope        char(1)         default '1'                comment '数据范围（1：全部数据权限 2：自定数据权限 3：本部门数据权限 4：本部门及以下数据权限）',
-  status            char(1)         not null                   comment '角色状态（0正常 1停用）',
-  del_flag          char(1)         default '0'                comment '删除标志（0代表存在 2代表删除）',
-  create_by         varchar(64)     default ''                 comment '创建者',
-  create_time       datetime                                   comment '创建时间',
-  update_by         varchar(64)     default ''                 comment '更新者',
-  update_time       datetime                                   comment '更新时间',
-  remark            varchar(500)    default null               comment '备注',
+  role_id              bigint(20)      not null auto_increment    comment 'Role ID',
+  role_name            varchar(30)     not null                   comment 'Role Name',
+  role_key             varchar(100)    not null                   comment 'Role Permission String',
+  role_sort            int(4)          not null                   comment 'Display Order',
+  data_scope           char(1)         default '1'                comment 'Data Scope (1: All Data Permissions, 2: Custom Data Permissions, 3: Department Data Permissions, 4: Department and Below Data Permissions)',
+  status               char(1)         not null                   comment 'Role Status (0 Active, 1 Inactive)',
+  del_flag             char(1)         default '0'                comment 'Delete Flag (0 Existing, 2 Deleted)',
+  create_by            varchar(64)     default ''                 comment 'Created By',
+  create_time          datetime                                   comment 'Creation Time',
+  update_by            varchar(64)     default ''                 comment 'Updated By',
+  update_time          datetime                                   comment 'Update Time',
+  remark               varchar(500)    default null               comment 'Remark',
   primary key (role_id)
 ) engine=innodb auto_increment=100 comment = 'Role Information Table';
 
